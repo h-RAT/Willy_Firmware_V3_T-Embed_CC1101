@@ -1,2 +1,5 @@
-# Willy_Firmware_V3_T-Embed_CC1101
-Willy Firmware is an alternative to Flipper Zero. | Board: Lilygo T-Embed - Module: CC1101/Infrared/NFC/NRF24 - Compatible with Flipper Zero file.
+<h1 align="center"> <code>Willy Firmware V3</code> - Flipper Zero alternative with T-Embed CC1101</h1><a id="introduction"></a>
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_CC1101/main/Image/Logo.png">
+</p>
