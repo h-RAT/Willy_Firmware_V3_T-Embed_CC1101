@@ -43,3 +43,15 @@ The goal of this firmware is to be able to benefit from the same functions as th
 <br><br>
 
 -----
+
+<h1 align="center">Features:</h1><a id="features"></a>
+
+### #SubGhz
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/SubGhz1.png" width="500" alt="Willy">
+  <br><br> 
+  <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/SubGhz2.png" width="500" alt="Willy">
+</p>
+
+-----
