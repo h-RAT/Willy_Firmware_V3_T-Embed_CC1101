@@ -54,4 +54,137 @@ The goal of this firmware is to be able to benefit from the same functions as th
   <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/SubGhz2.png" width="500" alt="Willy">
 </p>
 
+
 -----
+
+- Read RAW:<br>
+Reads and decode signals in a raw format, including signals from remotes with unknown protocols.
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/Read_RAW.png" width="500" alt="Willy">
+    <br><br> 
+  <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/Read_RAW_Settings.png" width="500" alt="Willy">
+    <br><br> 
+  <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/Read_RAW_Signal.png" width="500" alt="Willy">
+</p>
+
+From there you can send it or save it on the sd card for use it later. 
+
+-----
+
+- Read:<br>
+Reads and decodes signals based on known protocols. If the protocol is static, Willy decode the signal. (You can save 50 signals in the memory)
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/Read.png" width="500" alt="Willy">
+    <br><br> 
+  <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/Read_Settings.png" width="500" alt="Willy">
+    <br><br> 
+  <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/Read_Signal_List.png" width="500" alt="Willy">
+        <br><br> 
+  <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/Read_Signal.png" width="500" alt="Willy">
+    <br><br> 
+  <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/Read_Signal_Generator.png" width="500" alt="Willy">
+
+
+  <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/Read_Signal_List2.png" width="500" alt="Willy">
+      <br><br> 
+  <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/Read_Signal2.png" width="500" alt="Willy">
+      <br><br> 
+  <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/Read_Signal_Generator2.png" width="500" alt="Willy">
+
+</p>
+
+From there you can send it or save it on the sd card for use it later. 
+
+<br>
+
+```txt
+[Supported decoders]
+* Allstar Firefly
+* Alutech AT-4N
+* Ansonic
+* BETT
+* Beninca ARC
+* CAME
+* CAME Atomo
+* CAME TWEE
+* Cham_Code
+* Clemsa
+* Ditec GOL4
+* Doitrand
+* Dooya
+* Elplast
+* Faac SLH
+* Feron
+* GangQi
+* GateTX
+* Hay21
+* Hollarm
+* Holtek
+* Holtek_HT12X
+* Honeywell
+* Honeywell Sec
+* Hormann HSM
+* Intertechno_V3
+* Jarolift
+* KeeLoq
+* KeyFinder
+* KingGates Stylo4k
+* Legrand
+* Linear
+* LinearDelta3
+* Magellan
+* Marantec
+* Marantec24
+* Mastercode
+* MegaCode
+* Nero Radio
+* Nero Sketch
+* Nice FLO
+* Nice FloR-S
+* Nord ICE
+* Phoenix_V2
+* Power Smart
+* Princeton
+* Revers_RB2
+* Roger
+* SMC5326
+* Security+ 1.0
+* Security+ 2.0
+* Somfy Keytis
+* Somfy Telis
+* Star Line
+* Treadmill37
+
+[Supported vehicle decoders]
+
+* Chrysler
+* FIAT SPA
+* FORD V0
+* Ford V1
+* Ford V2
+* KIA/HYU V0
+* KIA/HYU V1
+* KIA/HYU V2
+* KIA/HYU V3/V4
+* KIA/HYU V5
+* KIA/HYU V6
+* Kia V7
+* Land Rover V0
+* MARELLI
+* Mazda V0
+* MazdaSiemens
+* Mitsubishi V0
+* PSA GROUP
+* PSA OLD
+* Porsche AG
+* Renault V0
+* SUBARU
+* SUZUKI
+* Star Line
+* VAG GROUP
+```
+
+-----
+
