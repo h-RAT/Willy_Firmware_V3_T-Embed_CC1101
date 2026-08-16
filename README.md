@@ -1,4 +1,4 @@
-<h1 align="center"> <code>Willy Firmware V3</code> - Flipper Zero alternative with T-Embed CC1101</h1><a id="introduction"></a>
+<h1 align="center"> <code>Willy Firmware V3</code> - Flipper Zero alternative for LILYGO T-Embed CC1101</h1><a id="introduction"></a>
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_CC1101/main/Image/Logo.png">
@@ -52,6 +52,8 @@ Both versions use the integrated CC1101 for Sub-GHz functionality.
 
 The **T-Embed CC1101 Plus** additionally includes an nRF24 2.4 GHz radio, which is supported by Willy Firmware V3.
 
+Willy Firmware V3 is designed specifically for the LILYGO T-Embed CC1101 and T-Embed CC1101 Plus. It is not intended as a direct replacement firmware for other ESP32 boards.
+
 ---
 
 <p align="center">
@@ -60,7 +62,7 @@ The **T-Embed CC1101 Plus** additionally includes an nRF24 2.4 GHz radio, which 
 
 -----
 
-<h1 align="center">Features:</h1><a id="features"></a>
+<h1 align="center">Features</h1><a id="features"></a>
 
 ### 📡 Sub-GHz
 
@@ -352,31 +354,31 @@ The detected frequency can then be applied directly to the general Sub-GHz setti
 
 ### 💡 Infrared
 
-In progress..
+🚧 Documentation and firmware in progress.
 
 -----
 
 ### 🟦 Bluetooth / BLE
 
-In progress..
+🚧 Documentation and firmware in progress.
 
 -----
 
 ### 📶 Wi-Fi
 
-In progress..
+🚧 Documentation and firmware in progress.
 
 -----
 
 ### 📱 NFC
 
-In progress..
+🚧 Documentation and firmware in progress.
 
 -----
 
 ### 📡 nRF24
 
-In progress..
+🚧 Documentation and firmware in progress.
 
 -----
 <br>
@@ -403,9 +405,9 @@ Compared with V2, V3 introduces or improves:
 - Improved hardware and shared SPI management
 - A firmware architecture designed specifically around the T-Embed platform
 
-The previous generation is still available here:
+The previous generation of Willy Firmware remains available here:
 
-https://github.com/h-RAT/Willy_Firmware_V2_ESP32_Flipper_Zero_Alternative
+**[Willy Firmware V2 – ESP32 Flipper Zero Alternative](https://github.com/h-RAT/Willy_Firmware_V2_ESP32_Flipper_Zero_Alternative)**
 
 # Development Status
 
@@ -421,7 +423,7 @@ More screenshots and detailed feature documentation will be added as additional 
 
 <br>
 
-<h1 align="center">Contact:</h1><a id="contact"></a>
+<h1 align="center">Contact</h1><a id="contact"></a>
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_CC1101/main/Image/Discord.png" width="100" height="100"> 
@@ -437,7 +439,7 @@ More screenshots and detailed feature documentation will be added as additional 
 
 <br>
 
-<h1 align="center">Disclaimer:</h1><a id="disclaimer"></a>
+<h1 align="center">Disclaimer</h1><a id="disclaimer"></a>
 
 Willy Firmware is intended for **educational, research and authorized security-testing purposes**.
 
