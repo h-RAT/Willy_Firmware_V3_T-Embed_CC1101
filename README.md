@@ -8,7 +8,14 @@
   <a href="#introduction">Introduction</a> | <a href="#features">Features</a> | <a href="#contact">Contact</a> | <a href="#disclaimer">Disclaimer</a>
 </h2>
 
-This firmware is an alternative to Flipper Zero for ESP-32, and is always updated from the original Flipper ideas, making it the most stable alternative.
+Willy Firmware V3 is a feature-rich firmware developed specifically for the LILYGO T-Embed CC1101 and T-Embed CC1101 Plus. Inspired by the Flipper Zero ecosystem, it brings Sub-GHz, Infrared, NFC, Wi-Fi, Bluetooth/BLE and nRF24 functionality together in a single ESP32-S3 device.
+
+### Supported hardware
+
+- LILYGO T-Embed CC1101
+- LILYGO T-Embed CC1101 Plus
+
+The Plus version is fully supported, including its additional nRF24 2.4 GHz radio.
 
 <p align="center">
   <a href="https://discord.gg/VqsUsPQSmP"><img src="https://discordapp.com/api/guilds/1169681522715000873/widget.png?style=banner2" alt="Discord Banner 3"/></a>
@@ -19,16 +26,18 @@ This firmware is an alternative to Flipper Zero for ESP-32, and is always update
 -----
 
 <br>
-<h1 align="center">What makes it special?</h1>
+<h1 align="center">What makes Willy Firmware special?</h1>
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/IMG_20260814_215202.jpg" width="500" alt="Willy">
 </p>
 
-We have spent many hours perfecting this code even further, and getting the most out of it.
+Willy Firmware V3 was rebuilt specifically for the LILYGO T-Embed CC1101 platform, with a focus on stability, usability and hardware integration.
 
-The goal of this firmware is to be able to benefit from the same functions as the Flipper Zero but on an ESP32, which is cheaper, and easier to obtain in some countries, as well as to regularly bring out amazing updates based on what the community wants, with a real understanding of what is happening. Fixing regularly talked about bugs and expanding capabilities with exciting new features and, most importantly, ensuring the simplest user experience possible.
-
+- **All-in-one:** Sub-GHz, Infrared, NFC, Wi-Fi, Bluetooth/BLE and nRF24.
+- **T-Embed optimized:** Designed specifically for the ESP32-S3 based T-Embed CC1101 and CC1101 Plus.
+- **Flipper file compatibility:** Read, save and reuse compatible Sub-GHz and Infrared files.
+- **Actively developed:** New features, protocol support and improvements are regularly added.
 <br>
 
 <p align="center">
@@ -36,7 +45,7 @@ The goal of this firmware is to be able to benefit from the same functions as th
 </p>
 
 <br><br>
-- <h4>Feature-rich: We include all common applications (SubGhz/Infrared/BLE/WiFi/NFC/NR24) in the firmware as well as new features.</h4>
+- <h4>Feature-rich: We include all common applications (Sub-GHz/Infrared/BLE/WiFi/NFC/NR24) in the firmware as well as new features.</h4>
 
 - <h4>Stable: Many hours have been spent rewriting core parts of the firmware as well as some of its apps to ensure stability.</h4>
 
@@ -46,7 +55,7 @@ The goal of this firmware is to be able to benefit from the same functions as th
 
 <h1 align="center">Features:</h1><a id="features"></a>
 
-### #SubGhz
+### #Sub-GHz
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/SubGhz1.png" width="500" alt="Willy">
@@ -58,7 +67,7 @@ The goal of this firmware is to be able to benefit from the same functions as th
 -----
 
 - Read RAW:<br>
-Reads and decode signals in a raw format, including signals from remotes with unknown protocols.
+Reads and decodes signals in a RAW format.
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/Read_RAW.png" width="500" alt="Willy">
@@ -68,12 +77,12 @@ Reads and decode signals in a raw format, including signals from remotes with un
   <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/Read_RAW_Signal.png" width="500" alt="Willy">
 </p>
 
-From there you can send it or save it on the sd card for use it later. 
+From there you can send it or save it on the sd card for later use. 
 
 -----
 
 - Read:<br>
-Reads and decodes signals based on known protocols. If the protocol is static, Willy decode the signal. (You can save 50 signals in the memory)
+Reads and decodes signals based on known protocols. (You can save 50 signals in the memory)
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/Read.png" width="500" alt="Willy">
@@ -95,7 +104,18 @@ Reads and decodes signals based on known protocols. If the protocol is static, W
 
 </p>
 
-From there you can send it or save it on the sd card for use it later. 
+From there you can send it or save it on the sd card for later use. 
+
+<details>
+<summary><b>Supported Sub-GHz decoders</b></summary>
+
+- Allstar Firefly
+- Alutech AT-4N
+- Ansonic
+- ...
+- Treadmill37
+
+</details>
 
 <br>
 
@@ -189,7 +209,7 @@ From there you can send it or save it on the sd card for use it later.
 -----
 
 - Transmit:<br>
-Generate and send signal based on known protocol and key.
+Generates and sends signals based on known protocol and key.
 
 <p align="center">  
   <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/Transmit.png" width="500" alt="Willy">
@@ -201,7 +221,7 @@ Generate and send signal based on known protocol and key.
   <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/Transmit_Signal.png" width="500" alt="Willy">
 </p>
 
-From there you can send it or save it on the sd card for use it later. 
+From there you can send it or save it on the sd card for later use. 
 
 <br>
 
@@ -269,8 +289,8 @@ From there you can send it or save it on the sd card for use it later.
 -----
 
 - Scanner:<br>
-When analysing, the device scanning signals strength (RSSI) at all the frequencies available in frequency configuration. 
-Then displays the frequency with the highest RSSI value, with signal strength higher than than configured.
+During analysis, the device scans signal strength (RSSI) at all the frequencies available in frequency configuration. 
+Then displays the frequency with the highest RSSI value, with signal strength higher than the configured threshold.
 
 <p align="center">  
   <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/Scanner.png" width="500" alt="Willy">
@@ -280,4 +300,37 @@ Then displays the frequency with the highest RSSI value, with signal strength hi
 
 From there you can apply the found frequency for the general settings.
 
+
+
 -----
+Update in progress...
+
+-----
+
+<br>
+
+<h1 align="center">Contact:</h1><a id="contact"></a>
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_CC1101/main/Image/Discord.png" width="100" height="100"> 
+  <br>
+  <code>h_rat</code>
+</p>
+
+<h4 align="center">Website: https://willy-firmware.com/</h4>
+
+<br>
+
+-----
+
+<br>
+
+<h1 align="center">Disclaimer:</h1><a id="disclaimer"></a>
+
+Willy Firmware is intended for educational, research and authorized security-testing purposes.
+
+Some features interact with radio-frequency, infrared, NFC, Bluetooth and Wi-Fi systems. Users are responsible for ensuring that their use of the firmware complies with applicable laws and regulations.
+
+Do not use Willy Firmware to interfere with, access, test or control systems without authorization.
+
+The developer assumes no responsibility for misuse of the firmware or for damages resulting from its use.
