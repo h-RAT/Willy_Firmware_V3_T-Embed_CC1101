@@ -780,7 +780,7 @@ Signals saved from **Infrared Learn** use the same Flipper Zero-compatible `.ir`
 
 -----
 
-## Infrared Remote<a id="infrared-remote"></a><br>
+## Infrared Remote<a id="infrared_remote"></a><br>
 
 **Infrared Remote** provides a collection of customizable infrared remote controls loaded directly from the SD card.
 
