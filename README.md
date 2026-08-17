@@ -92,7 +92,8 @@ Willy Firmware V3 is designed specifically for the LILYGO T-Embed CC1101 and T-E
   <a href="#rollback">Rollback</a> •
   <a href="#jam_mode">Rolljam/back Jammer</a> •
   <a href="#pocsag_read">Pocsag Read</a> •
-  <a href="#pocsag_send">Pocsag Send</a>
+  <a href="#pocsag_send">Pocsag Send</a> •
+  <a href="#subghz_sd">SD</a>
 </p>
 
 Willy Firmware uses the integrated **CC1101** for Sub-GHz reception, decoding, transmission and signal analysis.
@@ -106,7 +107,7 @@ The firmware supports both known protocols and RAW signals, allowing signals to 
 
 -----
 
-- Read RAW:<a id="read-raw"></a><br>
+## Read RAW<a id="read-raw"></a><br>
 
 **Read RAW** captures Sub-GHz signals directly as RAW pulse data.
 
@@ -114,14 +115,10 @@ This allows signals using unknown or unsupported protocols to be captured withou
 
 Captured signals can be inspected, retransmitted or saved to the SD card for later use.
 
-### RAW capture
-
 <p align="center">
   <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/Read_RAW.png" width="49%">
   <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/Read_RAW_Settings.png" width="49%">
 </p>
-
-### Captured RAW signal
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/Read_RAW_Signal.png" width="700">
@@ -129,7 +126,7 @@ Captured signals can be inspected, retransmitted or saved to the SD card for lat
 
 -----
 
-- Read:<a id="read"></a><br>
+## Read<a id="read"></a><br>
 
 **Read** receives and decodes Sub-GHz signals using known protocols.
 
@@ -137,35 +134,27 @@ When a compatible signal is received, Willy Firmware decodes its information and
 
 Up to **50 signals** can be kept in memory. From there, signals can be inspected, retransmitted or saved to the SD card for later use.
 
-### Read interface
-
 <p align="center">
   <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/Read.png" width="49%">
   <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/Read_Settings.png" width="49%">
 </p>
-
-### Received signal
-
-<p align="center">
-  <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/Read_Signal.png" width="49%">
-  <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/Read_Signal2.png" width="49%">
-</p>
-
-### Signal list
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/Read_Signal_List.png" width="49%">
   <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/Read_Signal_List2.png" width="49%">
 </p>
 
-### Signal generator
+<p align="center">
+  <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/Read_Signal.png" width="49%">
+  <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/Read_Signal2.png" width="49%">
+</p>
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/Read_Signal_Generator.png" width="49%">
   <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/Read_Signal_Generator2.png" width="49%">
 </p>
 
-### Supported decoders
+## Supported decoders
 
 <details>
 <summary><b>Show supported Sub-GHz decoders</b></summary>
@@ -230,7 +219,7 @@ Up to **50 signals** can be kept in memory. From there, signals can be inspected
 
 </details>
 
-### Supported vehicle decoders
+## Supported vehicle decoders
 
 <details>
 <summary><b>Show supported vehicle decoders</b></summary>
@@ -266,20 +255,16 @@ Up to **50 signals** can be kept in memory. From there, signals can be inspected
 
 -----
 
-- Transmit:<a id="transmit"></a><br>
+## Transmit<a id="transmit"></a><br>
 
 **Transmit** generates Sub-GHz signals using supported protocols and user-defined values.
 
 Signals can be configured directly from the device, transmitted immediately or saved to the SD card for later use.
 
-### Transmit interface
-
 <p align="center">
   <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/Transmit.png" width="49%">
   <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/Transmit_Signal_Editor.png" width="49%">
 </p>
-
-### Generated signal
 
 <p align="center">
 
@@ -290,7 +275,7 @@ Signals can be configured directly from the device, transmitted immediately or s
 
 <br>
 
-### Supported protocols
+## Supported protocols
 
 <details>
 <summary><b>Show supported transmission protocols</b></summary>
@@ -364,12 +349,10 @@ Signals can be configured directly from the device, transmitted immediately or s
 
 The appropriate frequency can be selected directly from the interface depending on the target region.
 
-### Supported regions
+## Supported regions
 
 - **EU** - 433.92 MHz
 - **US** - 315.00 MHz
-
-### Tesla interface
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/Tesla.png" width="700">
@@ -385,14 +368,10 @@ When a signal exceeds the configured RSSI threshold, Willy Firmware identifies a
 
 The detected frequency can then be applied directly to the general Sub-GHz settings.
 
-### Scanner interface
-
 <p align="center">
   <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/Scanner.png" width="49%">
   <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/Scanner_Settings.png" width="49%">
 </p>
-
-### Frequency detected
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/Scanner_Result.png" width="700">
@@ -416,8 +395,6 @@ Several parameters can be configured directly from the interface, including:
 
 The increment step can be adjusted to move through the code range at different intervals, such as **1, 5, 10 or 30 values per step**.
 
-### Bruteforce interface
-
 <p align="center">
   <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/Bruteforce.png" width="49%">
   <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/Bruteforce_Settings.png" width="49%">
@@ -425,7 +402,7 @@ The increment step can be adjusted to move through the code range at different i
 
 <br>
 
-### Supported protocols
+## Supported protocols
 
 <details>
 <summary><b>Show supported bruteforce protocols</b></summary>
@@ -490,15 +467,13 @@ Instead of transmitting individual values one by one, the generated sequence com
 
 The protocol and operating frequency can be selected directly from the interface.
 
-### DeBruijn interface
-
 <p align="center">
   <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/DeBruijn.png" width="700">
 </p>
 
 <br>
 
-### Supported protocols
+## Supported protocols
 
 <details>
 <summary><b>Show supported DeBruijn protocols</b></summary>
@@ -513,10 +488,10 @@ The protocol and operating frequency can be selected directly from the interface
 - Stanley Multicode | 310.00 MHz
 - Stanley Multicode | 390.00 MHz
 - Stanley Multicode | 433.92 MHz
-- Charmberlain | 300.00 MHz
-- Charmberlain | 310.00 MHz
-- Charmberlain | 390.00 MHz
-- Charmberlain | 433.92 MHz
+- Chamberlain | 300.00 MHz
+- Chamberlain | 310.00 MHz
+- Chamberlain | 390.00 MHz
+- Chamberlain | 433.92 MHz
 - Linear MooreMatic | 300.00 MHz
 - Linear MooreMatic | 310.00 MHz
 - Linear MooreMatic | 390.00 MHz
@@ -536,15 +511,13 @@ A command can be selected directly from the interface and transmitted using its 
 
 Available commands include playback controls, volume controls, queue management and other supported remote functions.
 
-### Jukebox interface
-
 <p align="center">
   <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/Jukebox.png" width="700">
 </p>
 
 <br>
 
-### Supported commands
+## Supported commands
 
 <details>
 <summary><b>Show supported Jukebox commands</b></summary>
@@ -574,8 +547,6 @@ The interface provides different transmission modes, including **Carrier** and *
 > [!CAUTION]
 > Radio-frequency interference may disrupt nearby wireless devices and communications. Use this feature only in controlled environments where you are authorized to perform RF testing, and always comply with applicable local regulations.
 
-### Jammer interface
-
 <p align="center">
   <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/Jammer_Config.png" width="49%">
   <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/Jammer_Settings.png" width="49%">
@@ -596,8 +567,6 @@ Once the capture session is complete, the collected signals are displayed in a d
 
 > [!CAUTION]
 > This feature is intended exclusively for controlled research and authorized testing of systems you own or have permission to evaluate. Radio-frequency interference and unauthorized use of captured signals may be illegal and may disrupt nearby devices.
-
-### Rolljam interface
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/Rolljam.png" width="49%">
@@ -622,8 +591,6 @@ A **Sequence** mode is also available to replay a set of captured signals consec
 > [!CAUTION]
 > This feature is intended exclusively for controlled research and authorized testing of systems you own or have permission to evaluate. Unauthorized replay of captured radio signals may be illegal or interfere with nearby systems.
 
-### Rollback interface
-
 <p align="center">
   <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/Rollback.png" width="49%">
   <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/Rollback_Settings.png" width="49%">
@@ -646,8 +613,6 @@ The mode can be controlled remotely by the primary Willy device, allowing the co
 > [!CAUTION]
 > Jam Mode is intended exclusively for controlled RF research and authorized testing environments. Radio-frequency interference may disrupt nearby wireless devices and communications and may be restricted or prohibited by local regulations.
 
-### Rolljam/Rollback Jammer interface
-
 <p align="center">
   <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/Jammer_Roll.png" width="49%">
   <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/Jammer_Roll_Start.png" width="49%">
@@ -664,8 +629,6 @@ The mode can be controlled remotely by the primary Willy device, allowing the co
 The receiver can monitor POCSAG transmissions independently of the destination **RIC** and automatically decode supported baud rates.
 
 Received messages are stored temporarily in a signal list, allowing each transmission to be inspected individually along with its decoded information and message content.
-
-### POCSAG Read interface
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/Pocsag_Read.png" width="49%">
@@ -688,12 +651,30 @@ This allows custom POCSAG messages to be created and transmitted without requiri
 > [!CAUTION]
 > Transmitting paging signals may be regulated and could interfere with active paging systems. Use this feature only with equipment and frequencies you are authorized to test, and always comply with applicable local regulations.
 
-### POCSAG Send interface
-
 <p align="center">
   <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/Pocsag_Send.png" width="49%">
   <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/Pocsag_Settings.png" width="49%">
 </p>
+
+<br>
+
+-----
+
+## Sub-GHz SD<a id="subghz_sd"></a><br>
+
+**Sub-GHz SD** provides direct access to compatible `.sub` files stored on the SD card.
+
+Files can be browsed directly from the device, opened and transmitted without requiring an external computer.
+
+Both **decoded Sub-GHz protocols and RAW signals** are supported, allowing signals previously captured, generated or copied to the SD card to be reused directly from Willy Firmware.
+
+Willy Firmware uses **Flipper Zero-compatible `.sub` files**, allowing compatible Sub-GHz files to be exchanged and reused between Willy Firmware and Flipper Zero.
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/SubGhz_SD_Card.png" width="49%">
+  <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/SubGhz_SD_Card_Send.png" width="49%">
+</p>
+
 
 <br>
 
@@ -704,7 +685,8 @@ This allows custom POCSAG messages to be created and transmitted without requiri
 <p align="center">
   <a href="#infrared_learn">Learn</a> •
   <a href="#infrared_remote">Remote</a> •
-  <a href="#infrared_tv_b_gone">TV-B-Gone</a>
+  <a href="#infrared_tv_b_gone">TV-B-Gone</a> •
+  <a href="#infrared_sd">SD</a>
 </p>
 
 Willy Firmware provides a complete set of **Infrared** tools for receiving, decoding, transmitting and managing IR signals directly from the device.
@@ -733,11 +715,14 @@ Received signals are temporarily stored in a signal list where they can be indiv
 
 Signals saved from **Infrared Learn** use the same Flipper Zero-compatible `.ir` file format, allowing compatible infrared files to be exchanged and reused between Willy Firmware and Flipper Zero.
 
+<br>
+
+## Supported protocols
+
 <details>
 <summary><b>Show supported Infrared protocols</b></summary>
 
 <br>
-
 - RAW
 - NEC
 - NECext
@@ -757,23 +742,14 @@ Signals saved from **Infrared Learn** use the same Flipper Zero-compatible `.ir`
 
 <br>
 
-### Infrared Learn interface
-
 <p align="center">
   <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/Learn.png" width="49%">
   <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/Learn_Settings.png" width="49%">
 </p>
 
-### Received signal
-
 <p align="center">
-  <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/Learn_Signal.png" width="700">
-</p>
-
-### Signal list
-
-<p align="center">
-  <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/Learn_Signal_List.png" width="700">
+  <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/Learn_Signal_List.png" width="49%">
+  <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/Learn_Signal.png" width="49%">
 </p>
 
 <br>
@@ -786,8 +762,6 @@ Signals saved from **Infrared Learn** use the same Flipper Zero-compatible `.ir`
 
 Remote controls are organized into different device categories.
 
-### Infrared Remote interface
-
 <p align="center">
   <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/Remote.png" width="49%">
   <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/Remote2.png" width="49%">
@@ -798,8 +772,6 @@ Each remote is based on a **Flipper Zero-compatible `.ir` file** stored on the S
 When a remote is opened, its available commands can be selected and transmitted directly from the device.
 
 Because the remote database is stored on the SD card, additional compatible `.ir` files and commands can be added without modifying or rebuilding the firmware.
-
-### Infrared Send Remote interface
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/Remote_TV.png" width="49%">
@@ -827,8 +799,6 @@ Two regional code databases are available directly from the interface:
 
 The application automatically transmits the supported power codes for the selected region, allowing compatible televisions to be controlled without selecting a specific manufacturer or remote profile.
 
-### Infrared TV-B-Gone interface
-
 <p align="center">
   <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/TV_B_Gone.png" width="700">
 </p>
@@ -838,15 +808,208 @@ The application automatically transmits the supported power codes for the select
 
 -----
 
+## Infrared SD<a id="infrared_sd"></a><br>
+
+**Infrared SD** provides direct access to compatible `.ir` files stored on the SD card.
+
+Infrared files can be browsed directly from the device, opened and transmitted without requiring an external computer.
+
+Both **decoded Infrared protocols and RAW signals** are supported, allowing previously captured or imported infrared signals to be reused directly from Willy Firmware.
+
+Willy Firmware uses **Flipper Zero-compatible `.ir` files**, allowing compatible Infrared files to be exchanged and reused between Willy Firmware and Flipper Zero.
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/Infrared_SD_Card.png" width="49%">
+  <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/Infrared_SD_Card_Send.png" width="49%">
+</p>
+
+
+<br>
+
+-----
+
 ### 🟦 Bluetooth / BLE<a id="bluetooth"></a>
 
-🚧 Documentation and firmware in progress.
+<p align="center">
+  <a href="#bluetooth_spam">BLE Spam</a> •
+  <a href="#bluetooth_scan">BLE Scan</a>
+</p>
+
+Willy Firmware provides a set of **Bluetooth Low Energy (BLE)** tools for device discovery, advertisement analysis and BLE payload testing.
+
+Nearby BLE devices can be scanned and inspected directly from the device, while dedicated testing tools can generate configurable BLE advertisement payloads.
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/Bluetooth.png" width="700">
+</p>
+
+-----
+
+## BLE Spam<a id="bluetooth_spam"></a><br>
+
+**BLE Spam** is an experimental BLE advertisement testing tool capable of transmitting different types of predefined advertising payloads.
+
+A payload type can be selected directly from the interface, while the delay between transmissions can be adjusted from the settings.
+
+## Supported payload types
+
+- Apple Device Popup
+- Apple Action Modal
+- Apple NotYourDevice
+- Google Fast Pair
+- Microsoft Swift Pair
+- Samsung Buds
+- Samsung Watch
+- Xiaomi QuickConnect
+- Pair Spam
+- Rickroll Pair Spam
+
+> [!CAUTION]
+> This feature generates BLE advertisements that may trigger notifications or pairing prompts on nearby compatible devices. Use it only in controlled and authorized testing environments.
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/BLE_Spam.png" width="49%">
+  <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/BLE_Spam_Settings.png" width="49%">
+</p>
+
+
+<br>
+
+-----
+
+## BLE Scan<a id="bluetooth_scan"></a><br>
+
+**BLE Scan** discovers nearby Bluetooth Low Energy devices and collects information from their advertisements.
+
+Detected devices are temporarily stored in a dedicated list where each result can be selected and inspected individually.
+
+The detailed result view provides available information about the detected device, including:
+
+- Device name
+- Detected device or advertisement type
+- MAC address
+- RSSI and estimated distance
+- Bluetooth address type
+- Advertisement event type
+- Manufacturer information
+- Recognized manufacturer-specific data
+
+This provides a convenient way to discover and inspect nearby BLE advertisements directly from Willy Firmware.
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/BLE_Scan.png" width="49%">
+  <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/BLE_Scan_Signal_List.png" width="49%">
+  <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/BLE_Scan_Signal.png" width="700">
+</p>
+
+
+<br>
 
 -----
 
 ### 📶 Wi-Fi<a id="wifi"></a>
 
-🚧 Documentation and firmware in progress.
+<p align="center">
+  <a href="#wifi_ssid_spam">SSID Spam</a> •
+  <a href="#wifi_evil_portal">Evil Portal</a> •
+  <a href="#wifi_sniffer">Sniffer</a>
+</p>
+
+Willy Firmware provides a collection of **Wi-Fi tools** for wireless network discovery, packet analysis and controlled network testing.
+
+The Wi-Fi section includes tools for generating test access-point advertisements, hosting a local interactive portal and discovering nearby access points and stations.
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/WiFi.png" width="700">
+</p>
+
+-----
+
+## SSID Spam<a id="wifi_ssid_spam"></a><br>
+
+**SSID Spam** is an experimental Wi-Fi testing tool that generates multiple advertised network names (SSIDs).
+
+Several name-generation modes are available directly from the interface:
+
+- **Random** - Generates randomized SSID names.
+- **Rickroll** - Uses a predefined Rickroll-themed SSID sequence.
+- **Default** - Uses the built-in default SSID list.
+
+This provides a simple way to test Wi-Fi scanning and network-list behavior with multiple simulated network names.
+
+> [!CAUTION]
+> Use this feature only in controlled and authorized testing environments.
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/SSID_Spam.png" width="49%">
+  <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/SSID_Spam_Settings.png" width="49%">
+</p>
+
+
+<br>
+
+-----
+
+## Evil Portal<a id="wifi_evil_portal"></a><br>
+
+**Evil Portal** creates a local Wi-Fi access point and hosts an interactive HTML page directly from the device.
+
+A default HTML page is included, allowing the feature to be used without requiring additional files or configuration.
+
+Responses submitted through the hosted page are received by Willy Firmware and displayed directly in the device logs, making it possible to observe and compare submitted test data in real time.
+
+This feature is intended for controlled captive-portal development, interface testing and authorized Wi-Fi research.
+
+> [!CAUTION]
+> Do not use this feature to impersonate legitimate services or collect information from users without their knowledge and authorization.
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/EvilPortal.png" width="49%">
+  <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/EvilPortal_Settings.png" width="49%">
+</p>
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/EvilPortal_Result_List.png" width="49%">
+  <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/EvilPortal_Result.png" width="49%">
+</p>
+
+<br>
+
+-----
+
+## Sniffer<a id="wifi_sniffer"></a><br>
+
+**Sniffer** discovers and analyzes nearby Wi-Fi devices and traffic directly from Willy Firmware.
+
+The scanner can operate in different discovery modes:
+
+- **Access Point** - Focuses on nearby Wi-Fi access points.
+- **Station** - Focuses on client stations observed on Wi-Fi networks.
+
+Scanning can be performed across **all available channels** or restricted to a specific Wi-Fi channel.
+
+Detected devices are stored in a dedicated result list where each entry can be opened and inspected individually to display the available network and device information.
+
+The result interface also includes an experimental **Deauthentication test** option for authorized wireless-network testing.
+
+> [!CAUTION]
+> Deauthentication frames can disconnect devices from a Wi-Fi network. Use this functionality only on networks and devices you own or have explicit authorization to test.
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/Sniffer.png" width="49%">
+  <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/Sniffer_Settings.png" width="49%">
+</p>
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/Sniffer_Result_List.png" width="49%">
+  <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/Sniffer_Result.png" width="49%">
+</p>
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/Sniffer_Deauth.png" width="700">
+</p>
+
+<br>
 
 -----
 
@@ -868,8 +1031,8 @@ The application automatically transmits the supported power codes for the select
   <a href="#about">About</a> •
   <a href="#brightness">Brightness</a> •
   <a href="#color">Color</a> •
-  <a href="#pin-code">PIN Code</a> •
-  <a href="#usb-mode">USB Mode</a> •
+  <a href="#pin_code">PIN Code</a> •
+  <a href="#usb_mode">USB Mode</a> •
   <a href="#shutdown">Shutdown</a> •
   <a href="#reboot">Reboot</a>
 </p>
@@ -892,8 +1055,6 @@ It displays useful real-time information including **RAM usage, SD card capacity
 
 This screen provides a quick way to monitor the device's resources, power status and operating time directly from Willy Firmware.
 
-### About interface
-
 <p align="center">
   <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/About.png" width="700">
 </p>
@@ -907,8 +1068,6 @@ This screen provides a quick way to monitor the device's resources, power status
 **Brightness** allows the display backlight intensity to be adjusted directly from the device.
 
 The selected brightness level is saved in the device settings and automatically restored after reboot.
-
-### Brightness interface
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/Brightness.png" width="700">
@@ -926,8 +1085,6 @@ A color can be selected using the integrated color picker, allowing the appearan
 
 The selected color is saved in the device settings and automatically restored after reboot.
 
-### Color interface
-
 <p align="center">
   <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/Color.png" width="700">
 </p>
@@ -944,8 +1101,6 @@ When enabled, a custom PIN code can be configured and stored in the device setti
 
 The integrated on-screen keyboard is used to enter and manage the PIN directly from the device.
 
-### PIN Code interface
-
 <p align="center">
   <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/PIN_Code.png" width="49%">
   <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/PIN_Code_Edit.png" width="49%">
@@ -956,13 +1111,11 @@ The integrated on-screen keyboard is used to enter and manage the PIN directly f
 
 -----
 
-## USB Mode<a id="usb-mode"></a><br>
+## USB Mode<a id="usb_mode"></a><br>
 
 **USB Mode** turns the device into a USB mass storage device, allowing the inserted SD card to be accessed directly from a connected computer.
 
 Once enabled, the SD card appears on the computer as a removable USB drive, making it easy to browse, copy, add or manage files without removing the SD card from the device.
-
-### USB Mode interface
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/USB_Mode.png" width="700">
