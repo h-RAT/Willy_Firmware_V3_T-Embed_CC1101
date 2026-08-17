@@ -154,7 +154,7 @@ Up to **50 signals** can be kept in memory. From there, signals can be inspected
   <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/Read_Signal_Generator2.png" width="49%">
 </p>
 
-## Supported decoders
+### Supported decoders
 
 <details>
 <summary><b>Show supported Sub-GHz decoders</b></summary>
@@ -219,7 +219,7 @@ Up to **50 signals** can be kept in memory. From there, signals can be inspected
 
 </details>
 
-## Supported vehicle decoders
+### Supported vehicle decoders
 
 <details>
 <summary><b>Show supported vehicle decoders</b></summary>
@@ -275,7 +275,7 @@ Signals can be configured directly from the device, transmitted immediately or s
 
 <br>
 
-## Supported protocols
+### Supported protocols
 
 <details>
 <summary><b>Show supported transmission protocols</b></summary>
@@ -349,7 +349,7 @@ Signals can be configured directly from the device, transmitted immediately or s
 
 The appropriate frequency can be selected directly from the interface depending on the target region.
 
-## Supported regions
+### Supported regions
 
 - **EU** - 433.92 MHz
 - **US** - 315.00 MHz
@@ -402,7 +402,7 @@ The increment step can be adjusted to move through the code range at different i
 
 <br>
 
-## Supported protocols
+### Supported protocols
 
 <details>
 <summary><b>Show supported bruteforce protocols</b></summary>
@@ -473,7 +473,7 @@ The protocol and operating frequency can be selected directly from the interface
 
 <br>
 
-## Supported protocols
+### Supported protocols
 
 <details>
 <summary><b>Show supported DeBruijn protocols</b></summary>
@@ -517,7 +517,7 @@ Available commands include playback controls, volume controls, queue management 
 
 <br>
 
-## Supported commands
+### Supported commands
 
 <details>
 <summary><b>Show supported Jukebox commands</b></summary>
@@ -717,7 +717,7 @@ Signals saved from **Infrared Learn** use the same Flipper Zero-compatible `.ir`
 
 <br>
 
-## Supported protocols
+### Supported protocols
 
 <details>
 <summary><b>Show supported Infrared protocols</b></summary>
@@ -851,7 +851,7 @@ Nearby BLE devices can be scanned and inspected directly from the device, while 
 
 A payload type can be selected directly from the interface, while the delay between transmissions can be adjusted from the settings.
 
-## Supported payload types
+### Supported payload types
 
 - Apple Device Popup
 - Apple Action Modal
