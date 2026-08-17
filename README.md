@@ -35,7 +35,7 @@ Willy Firmware V3 was rebuilt specifically for the LILYGO T-Embed CC1101 platfor
 - **All-in-one:** Sub-GHz, Infrared, NFC, Wi-Fi, Bluetooth/BLE and nRF24 functionality.
 - **T-Embed optimized:** Designed specifically around the ESP32-S3 based T-Embed CC1101.
 - **T-Embed CC1101 Plus support:** Supports the additional nRF24 2.4 GHz radio available on the Plus model.
-- **Flipper file compatibility:** Compatible Sub-GHz and Infrared files can be saved, loaded and reused.
+- **Flipper Zero file compatibility:** Uses Flipper Zero-compatible Sub-GHz and Infrared file formats, allowing compatible files to be saved, loaded, exchanged and reused between devices.
 - **SD Card support:** Captured signals and compatible files can be stored and accessed directly from the device.
 - **Actively developed:** New applications, protocols, improvements and fixes are regularly added.
 
@@ -70,7 +70,8 @@ Willy Firmware V3 is designed specifically for the LILYGO T-Embed CC1101 and T-E
   <a href="#bluetooth">🟦 Bluetooth / BLE</a> |
   <a href="#wifi">📶 Wi-Fi</a> |
   <a href="#nfc">📱 NFC</a> |
-  <a href="#nrf24">📡 nRF24</a>
+  <a href="#nrf24">📡 nRF24</a> |
+  <a href="#settings">⚙️ Settings</a>
 </h3>
 
 <br>
@@ -89,7 +90,7 @@ Willy Firmware V3 is designed specifically for the LILYGO T-Embed CC1101 and T-E
   <a href="#jammer">Jammer</a> •
   <a href="#rolljam">Rolljam</a> •
   <a href="#rollback">Rollback</a> •
-  <a href="#jam-mode">Rolljam/back Jammer</a>
+  <a href="#jam_mode">Rolljam/back Jammer</a> •
   <a href="#pocsag_read">Pocsag Read</a> •
   <a href="#pocsag_send">Pocsag Send</a>
 </p>
@@ -700,7 +701,140 @@ This allows custom POCSAG messages to be created and transmitted without requiri
 
 ### 💡 Infrared<a id="infrared"></a>
 
-🚧 Documentation and firmware in progress.
+<p align="center">
+  <a href="#infrared_learn">Learn</a> •
+  <a href="#infrared_remote">Remote</a> •
+  <a href="#infrared_tv_b_gone">TV-B-Gone</a>
+</p>
+
+Willy Firmware provides a complete set of **Infrared** tools for receiving, decoding, transmitting and managing IR signals directly from the device.
+
+Infrared signals can be captured from existing remote controls, decoded using supported protocols or stored as RAW timing data when the protocol is unknown.
+
+Captured signals can then be inspected, retransmitted or saved to the SD card for later use.
+
+The Infrared section also includes additional tools such as universal remote-control functions for compatible devices.
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/Infrared.png" width="700">
+</p>
+
+-----
+
+## Infrared Learn<a id="infrared_learn"></a><br>
+
+**Infrared Learn** receives and analyzes infrared signals from compatible remote controls and devices.
+
+When a supported protocol is detected, Willy Firmware automatically decodes the signal and displays its protocol information and associated values.
+
+Signals using an unknown or unsupported protocol can still be captured and stored as **RAW infrared timing data**, allowing them to be reproduced without requiring a dedicated decoder.
+
+Received signals are temporarily stored in a signal list where they can be individually inspected, retransmitted or saved to the SD card for later use.
+
+Signals saved from **Infrared Learn** use the same Flipper Zero-compatible `.ir` file format, allowing compatible infrared files to be exchanged and reused between Willy Firmware and Flipper Zero.
+
+<details>
+<summary><b>Show supported Infrared protocols</b></summary>
+
+<br>
+
+- RAW
+- NEC
+- NECext
+- NEC42
+- NEC42ext
+- Samsung32
+- RC6
+- RC5
+- RC5X
+- SIRC
+- SIRC15
+- SIRC20
+- Kaseikyo
+- RCA
+
+</details>
+
+<br>
+
+### Infrared Learn interface
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/Learn.png" width="49%">
+  <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/Learn_Settings.png" width="49%">
+</p>
+
+### Received signal
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/Learn_Signal.png" width="700">
+</p>
+
+### Signal list
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/Learn_Signal_List.png" width="700">
+</p>
+
+<br>
+
+-----
+
+## Infrared Remote<a id="infrared-remote"></a><br>
+
+**Infrared Remote** provides a collection of customizable infrared remote controls loaded directly from the SD card.
+
+Remote controls are organized into different device categories.
+
+### Infrared Remote interface
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/Remote.png" width="49%">
+  <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/Remote2.png" width="49%">
+</p>
+
+Each remote is based on a **Flipper Zero-compatible `.ir` file** stored on the SD card, containing a collection of named infrared commands and their associated signal data.
+
+When a remote is opened, its available commands can be selected and transmitted directly from the device.
+
+Because the remote database is stored on the SD card, additional compatible `.ir` files and commands can be added without modifying or rebuilding the firmware.
+
+### Infrared Send Remote interface
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/Remote_TV.png" width="49%">
+  <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/Remote_Digital_Sign.png" width="49%">
+    <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/Remote_Projector.png" width="49%">
+  <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/Remote_LED.png" width="49%">
+<br>
+  ...
+</p>
+
+<br>
+
+-----
+
+## Infrared TV-B-Gone<a id="infrared_tv_b_gone"></a><br>
+
+**Infrared TV-B-Gone** is a universal TV power-control feature based on a built-in database of known infrared power signals.
+
+Unlike **Infrared Remote**, the signal database is embedded directly into Willy Firmware and does not require an SD card.
+
+Two regional code databases are available directly from the interface:
+
+- **Region NA** - North America
+- **Region EU** - Europe
+
+The application automatically transmits the supported power codes for the selected region, allowing compatible televisions to be controlled without selecting a specific manufacturer or remote profile.
+
+### Infrared TV-B-Gone interface
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/TV_B_Gone.png" width="700">
+</p>
+
+
+<br>
 
 -----
 
@@ -725,6 +859,136 @@ This allows custom POCSAG messages to be created and transmitted without requiri
 ### 📡 nRF24<a id="nrf24"></a>
 
 🚧 Documentation and firmware in progress.
+
+-----
+
+### ⚙️ Settings<a id="settings"></a>
+
+<p align="center">
+  <a href="#about">About</a> •
+  <a href="#brightness">Brightness</a> •
+  <a href="#color">Color</a> •
+  <a href="#pin-code">PIN Code</a> •
+  <a href="#usb-mode">USB Mode</a> •
+  <a href="#shutdown">Shutdown</a> •
+  <a href="#reboot">Reboot</a>
+</p>
+
+The **Settings** section provides access to device information, interface customization, security options and system controls.
+
+Most configurable preferences are stored directly on the device and automatically restored after reboot.
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/Settings.png" width="700">
+</p>
+
+-----
+
+## About<a id="about"></a><br>
+
+**About** provides an overview of the device's current hardware and system status.
+
+It displays useful real-time information including **RAM usage, SD card capacity, battery level, battery voltage (mV), current consumption (mA) and device uptime**.
+
+This screen provides a quick way to monitor the device's resources, power status and operating time directly from Willy Firmware.
+
+### About interface
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/About.png" width="700">
+</p>
+
+<br>
+
+-----
+
+## Brightness<a id="brightness"></a><br>
+
+**Brightness** allows the display backlight intensity to be adjusted directly from the device.
+
+The selected brightness level is saved in the device settings and automatically restored after reboot.
+
+### Brightness interface
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/Brightness.png" width="700">
+</p>
+
+<br>
+
+-----
+
+## Color<a id="color"></a><br>
+
+**Color** allows the main interface color to be customized directly from the device.
+
+A color can be selected using the integrated color picker, allowing the appearance of Willy Firmware to be personalized according to the user's preference.
+
+The selected color is saved in the device settings and automatically restored after reboot.
+
+### Color interface
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/Color.png" width="700">
+</p>
+
+<br>
+
+-----
+
+## PIN Code<a id="pin_code"></a><br>
+
+**PIN Code** provides an optional security lock for Willy Firmware.
+
+When enabled, a custom PIN code can be configured and stored in the device settings. The PIN will then be required to unlock the device after startup.
+
+The integrated on-screen keyboard is used to enter and manage the PIN directly from the device.
+
+### PIN Code interface
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/PIN_Code.png" width="49%">
+  <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/PIN_Code_Edit.png" width="49%">
+  <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/PIN_Code_Locked.png" width="700">
+</p>
+
+<br>
+
+-----
+
+## USB Mode<a id="usb-mode"></a><br>
+
+**USB Mode** turns the device into a USB mass storage device, allowing the inserted SD card to be accessed directly from a connected computer.
+
+Once enabled, the SD card appears on the computer as a removable USB drive, making it easy to browse, copy, add or manage files without removing the SD card from the device.
+
+### USB Mode interface
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/USB_Mode.png" width="700">
+</p>
+
+<br>
+
+-----
+
+## Shutdown<a id="shutdown"></a><br>
+
+**Shutdown** safely powers off the device directly from Willy Firmware.
+
+Once the device is powered off, it can be turned back on by pressing 3x the **OK button**
+
+<br>
+
+-----
+
+## Reboot<a id="reboot"></a><br>
+
+**Reboot** restarts the device and reloads Willy Firmware.
+
+This can be used to quickly restart the system after changing settings or whenever a fresh firmware initialization is required.
+
+<br>
 
 -----
 
