@@ -64,7 +64,35 @@ Willy Firmware V3 is designed specifically for the LILYGO T-Embed CC1101 and T-E
 
 <h1 align="center">Features</h1><a id="features"></a>
 
-### 📡 Sub-GHz
+<h3 align="center">
+  <a href="#subghz">📡 Sub-GHz</a> |
+  <a href="#infrared">💡 Infrared</a> |
+  <a href="#bluetooth">🟦 Bluetooth / BLE</a> |
+  <a href="#wifi">📶 Wi-Fi</a> |
+  <a href="#nfc">📱 NFC</a> |
+  <a href="#nrf24">📡 nRF24</a>
+</h3>
+
+<br>
+
+### 📡 Sub-GHz<a id="subghz"></a>
+
+<p align="center">
+  <a href="#read-raw">Read RAW</a> •
+  <a href="#read">Read</a> •
+  <a href="#transmit">Transmit</a> •
+  <a href="#tesla">Tesla</a> •
+  <a href="#scanner">Scanner</a> •
+  <a href="#bruteforce">Bruteforce</a> •
+  <a href="#debruijn">DeBruijn</a> •
+  <a href="#jukebox">Jukebox</a> •
+  <a href="#jammer">Jammer</a> •
+  <a href="#rolljam">Rolljam</a> •
+  <a href="#rollback">Rollback</a> •
+  <a href="#jam-mode">Rolljam/back Jammer</a>
+  <a href="#pocsag_read">Pocsag Read</a> •
+  <a href="#pocsag_send">Pocsag Send</a>
+</p>
 
 Willy Firmware uses the integrated **CC1101** for Sub-GHz reception, decoding, transmission and signal analysis.
 
@@ -77,7 +105,7 @@ The firmware supports both known protocols and RAW signals, allowing signals to 
 
 -----
 
-- Read RAW:<br>
+- Read RAW:<a id="read-raw"></a><br>
 
 **Read RAW** captures Sub-GHz signals directly as RAW pulse data.
 
@@ -100,7 +128,7 @@ Captured signals can be inspected, retransmitted or saved to the SD card for lat
 
 -----
 
-- Read:<br>
+- Read:<a id="read"></a><br>
 
 **Read** receives and decodes Sub-GHz signals using known protocols.
 
@@ -237,7 +265,7 @@ Up to **50 signals** can be kept in memory. From there, signals can be inspected
 
 -----
 
-- Transmit:<br>
+- Transmit:<a id="transmit"></a><br>
 
 **Transmit** generates Sub-GHz signals using supported protocols and user-defined values.
 
@@ -329,7 +357,7 @@ Signals can be configured directly from the device, transmitted immediately or s
 
 -----
 
-## Tesla
+## Tesla<a id="tesla"></a><br>
 
 **Tesla** generates and transmits the known signal used to open the charging port door on compatible Tesla vehicles.
 
@@ -348,7 +376,7 @@ The appropriate frequency can be selected directly from the interface depending 
 
 -----
 
-## Scanner
+## Scanner<a id="scanner"></a><br>
 
 **Scanner** analyzes signal strength (RSSI) across the frequencies available in the Sub-GHz frequency configuration.
 
@@ -371,7 +399,7 @@ The detected frequency can then be applied directly to the general Sub-GHz setti
 
 -----
 
-## Bruteforce
+## Bruteforce<a id="bruteforce"></a><br>
 
 **Bruteforce** generates Sub-GHz signals using supported fixed-code protocols while automatically iterating through possible code values.
 
@@ -453,7 +481,7 @@ The increment step can be adjusted to move through the code range at different i
 
 -----
 
-## DeBruijn
+## DeBruijn<a id="debruijn"></a><br>
 
 **DeBruijn** generates and transmits De Bruijn sequences based on supported fixed-code Sub-GHz protocols.
 
@@ -499,7 +527,7 @@ The protocol and operating frequency can be selected directly from the interface
 
 -----
 
-## Jukebox
+## Jukebox<a id="jukebox"></a><br>
 
 **Jukebox** provides a collection of known Sub-GHz remote-control commands used by compatible jukebox systems.
 
@@ -534,10 +562,9 @@ Available commands include playback controls, volume controls, queue management 
 
 <br>
 
-
 -----
 
-## Jammer
+## Jammer<a id="jammer"></a><br>
 
 **Jammer** is an experimental Sub-GHz interference-testing feature intended for controlled and authorized RF testing environments.
 
@@ -558,31 +585,144 @@ The interface provides different transmission modes, including **Carrier** and *
 
 -----
 
-### 💡 Infrared
+## Rolljam<a id="rolljam"></a><br>
+
+**Rolljam** is an experimental proof-of-concept designed to demonstrate rolling-code capture and synchronization behavior in a controlled testing environment.
+
+The application can collect between **2 and 5 received signals** during a test session and can communicate with a second Willy Firmware device over Wi-Fi to coordinate the testing workflow.
+
+Once the capture session is complete, the collected signals are displayed in a dedicated signal list where they can be inspected and saved to the SD card for later analysis.
+
+> [!CAUTION]
+> This feature is intended exclusively for controlled research and authorized testing of systems you own or have permission to evaluate. Radio-frequency interference and unauthorized use of captured signals may be illegal and may disrupt nearby devices.
+
+### Rolljam interface
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/Rolljam.png" width="49%">
+  <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/Rolljam_Settings.png" width="49%">
+  <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/Rolljam_Signal_List.png" width="700">
+</p>
+
+<br>
+
+-----
+
+## Rollback<a id="rollback"></a><br>
+
+**Rollback** is an experimental proof-of-concept for studying rolling-code behavior and signal sequences in controlled environments.
+
+The application can capture and store between **2 and 5 signals** during a test session. It can also communicate with a second Willy Firmware device over Wi-Fi to coordinate the testing workflow.
+
+After capture, the collected signals are displayed in a dedicated list where individual signals can be inspected and saved to the SD card for later analysis.
+
+A **Sequence** mode is also available to replay a set of captured signals consecutively. The delay between sequence entries can be configured directly from the interface.
+
+> [!CAUTION]
+> This feature is intended exclusively for controlled research and authorized testing of systems you own or have permission to evaluate. Unauthorized replay of captured radio signals may be illegal or interfere with nearby systems.
+
+### Rollback interface
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/Rollback.png" width="49%">
+  <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/Rollback_Settings.png" width="49%">
+  <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/Rollback_Signal_List.png" width="49%">
+  <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/Rollback_Send_Sequence.png" width="49%">
+</p>
+
+<br>
+
+-----
+
+## Rolljam/Rollback Jammer<a id="jam_mode"></a><br>
+
+**Rolljam/Rollback Jammer** is a companion mode designed to work with the experimental **Rolljam** and **Rollback** proof-of-concept applications.
+
+It allows two Willy Firmware devices to communicate over Wi-Fi so that the secondary device can participate in a coordinated RF test session.
+
+The mode can be controlled remotely by the primary Willy device, allowing the companion device to start and stop its configured test state as the Rolljam or Rollback workflow progresses.
+
+> [!CAUTION]
+> Jam Mode is intended exclusively for controlled RF research and authorized testing environments. Radio-frequency interference may disrupt nearby wireless devices and communications and may be restricted or prohibited by local regulations.
+
+### Rolljam/Rollback Jammer interface
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/Jammer_Roll.png" width="49%">
+  <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/Jammer_Roll_Start.png" width="49%">
+</p>
+
+<br>
+
+-----
+
+## POCSAG Read<a id="pocsag_read"></a><br>
+
+**POCSAG Read** is a dedicated receiver for capturing and decoding POCSAG pager messages transmitted over Sub-GHz frequencies.
+
+The receiver can monitor POCSAG transmissions independently of the destination **RIC** and automatically decode supported baud rates.
+
+Received messages are stored temporarily in a signal list, allowing each transmission to be inspected individually along with its decoded information and message content.
+
+### POCSAG Read interface
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/Pocsag_Read.png" width="49%">
+  <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/Pocsag_Read_Signal_List.png" width="49%">
+  <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/Pocsag_Read_Signal.png" width="700">
+</p>
+
+<br>
+
+-----
+
+## POCSAG Send<a id="pocsag_send"></a><br>
+
+**POCSAG Send** generates and transmits configurable POCSAG pager messages for compatible receivers.
+
+The destination **RIC**, message content and baud rate can be configured directly from the device using the integrated keyboard and settings interface.
+
+This allows custom POCSAG messages to be created and transmitted without requiring an external computer.
+
+> [!CAUTION]
+> Transmitting paging signals may be regulated and could interfere with active paging systems. Use this feature only with equipment and frequencies you are authorized to test, and always comply with applicable local regulations.
+
+### POCSAG Send interface
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/Pocsag_Send.png" width="49%">
+  <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/Pocsag_Settings.png" width="49%">
+</p>
+
+<br>
+
+-----
+
+### 💡 Infrared<a id="infrared"></a>
 
 🚧 Documentation and firmware in progress.
 
 -----
 
-### 🟦 Bluetooth / BLE
+### 🟦 Bluetooth / BLE<a id="bluetooth"></a>
 
 🚧 Documentation and firmware in progress.
 
 -----
 
-### 📶 Wi-Fi
+### 📶 Wi-Fi<a id="wifi"></a>
 
 🚧 Documentation and firmware in progress.
 
 -----
 
-### 📱 NFC
+### 📱 NFC<a id="nfc"></a>
 
 🚧 Documentation and firmware in progress.
 
 -----
 
-### 📡 nRF24
+### 📡 nRF24<a id="nrf24"></a>
 
 🚧 Documentation and firmware in progress.
 
