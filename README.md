@@ -329,6 +329,25 @@ Signals can be configured directly from the device, transmitted immediately or s
 
 -----
 
+## Tesla
+
+**Tesla** generates and transmits the known signal used to open the charging port door on compatible Tesla vehicles.
+
+The appropriate frequency can be selected directly from the interface depending on the target region.
+
+### Supported regions
+
+- **EU** - 433.92 MHz
+- **US** - 315.00 MHz
+
+### Tesla interface
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/Tesla.png" width="700">
+</p>
+
+-----
+
 ## Scanner
 
 **Scanner** analyzes signal strength (RSSI) across the frequencies available in the Sub-GHz frequency configuration.
@@ -349,6 +368,193 @@ The detected frequency can then be applied directly to the general Sub-GHz setti
 <p align="center">
   <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/Scanner_Result.png" width="700">
 </p>
+
+-----
+
+## Bruteforce
+
+**Bruteforce** generates Sub-GHz signals using supported fixed-code protocols while automatically iterating through possible code values.
+
+A single signal can be transmitted using the currently selected value, or the complete sequence can be started to automatically increment the value after each transmission.
+
+The current signal can also be saved to the SD card for later use.
+
+Several parameters can be configured directly from the interface, including:
+
+- Delay between transmissions
+- Increment step
+- Current code value
+
+The increment step can be adjusted to move through the code range at different intervals, such as **1, 5, 10 or 30 values per step**.
+
+### Bruteforce interface
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/Bruteforce.png" width="49%">
+  <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/Bruteforce_Settings.png" width="49%">
+</p>
+
+<br>
+
+### Supported protocols
+
+<details>
+<summary><b>Show supported bruteforce protocols</b></summary>
+
+<br>
+
+- Ansonic 12bit - 433.07 MHz
+- Ansonic 12bit - 433.92 MHz
+- Ansonic 12bit - 434.07 MHz
+- CAME 12bit - 303.87 MHz
+- CAME 12bit - 307.80 MHz
+- CAME 12bit - 315.00 MHz
+- CAME 12bit - 330.00 MHz
+- CAME 12bit - 433.92 MHz
+- CAME 12bit - 868.35 MHz
+- Chamberlain 7bit - 300.00 MHz
+- Chamberlain 7bit - 315.00 MHz
+- Chamberlain 7bit - 390.00 MHz
+- Chamberlain 8bit - 300.00 MHz
+- Chamberlain 8bit - 315.00 MHz
+- Chamberlain 8bit - 390.00 MHz
+- Chamberlain 9bit - 300.00 MHz
+- Chamberlain 9bit - 315.00 MHz
+- Chamberlain 9bit - 318.00 MHz
+- Chamberlain 9bit - 390.00 MHz
+- Chamberlain 9bit - 433.92 MHz
+- HT12X AM 12bit - 315.00 MHz
+- HT12X AM 12bit - 433.92 MHz
+- HT12X AM 12bit - 868.35 MHz
+- HT12X AM 12bit - 915.00 MHz
+- HT12X FM 12bit - 433.92 MHz
+- Linear 10bit - 300.00 MHz
+- Linear 10bit - 310.00 MHz
+- LinearDelta3 8bit - 310.00 MHz
+- Nice FLO 12bit - 433.92 MHz
+- Nice FLO 12bit - 868.35 MHz
+- PT2260 24bit - 315.00 MHz
+- PT2260 24bit - 330.00 MHz
+- PT2260 24bit - 390.00 MHz
+- PT2260 24bit - 433.92 MHz
+- PT2262 24bit - 315.00 MHz
+- PT2262 24bit - 418.00 MHz
+- PT2262 24bit - 430.00 MHz
+- PT2262 24bit - 430.50 MHz
+- PT2262 24bit - 433.92 MHz
+- SMC5326 25bit - 330.00 MHz
+- SMC5326 25bit - 433.92 MHz
+- UNILARM 25bit - 330.00 MHz
+- UNILARM 25bit - 433.92 MHz
+
+</details>
+
+<br>
+
+-----
+
+## DeBruijn
+
+**DeBruijn** generates and transmits De Bruijn sequences based on supported fixed-code Sub-GHz protocols.
+
+Instead of transmitting individual values one by one, the generated sequence combines possible code combinations into a compact transmission sequence for the selected protocol.
+
+The protocol and operating frequency can be selected directly from the interface.
+
+### DeBruijn interface
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/DeBruijn.png" width="700">
+</p>
+
+<br>
+
+### Supported protocols
+
+<details>
+<summary><b>Show supported DeBruijn protocols</b></summary>
+
+<br>
+
+- Linear Multicode | 300.00 MHz
+- Linear Multicode | 310.00 MHz
+- Linear Multicode | 390.00 MHz
+- Linear Multicode | 433.92 MHz
+- Stanley Multicode | 300.00 MHz
+- Stanley Multicode | 310.00 MHz
+- Stanley Multicode | 390.00 MHz
+- Stanley Multicode | 433.92 MHz
+- Charmberlain | 300.00 MHz
+- Charmberlain | 310.00 MHz
+- Charmberlain | 390.00 MHz
+- Charmberlain | 433.92 MHz
+- Linear MooreMatic | 300.00 MHz
+- Linear MooreMatic | 310.00 MHz
+- Linear MooreMatic | 390.00 MHz
+- Linear MooreMatic | 433.92 MHz
+
+</details>
+
+<br>
+
+-----
+
+## Jukebox
+
+**Jukebox** provides a collection of known Sub-GHz remote-control commands used by compatible jukebox systems.
+
+A command can be selected directly from the interface and transmitted using its predefined signal.
+
+Available commands include playback controls, volume controls, queue management and other supported remote functions.
+
+### Jukebox interface
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/Jukebox.png" width="700">
+</p>
+
+<br>
+
+### Supported commands
+
+<details>
+<summary><b>Show supported Jukebox commands</b></summary>
+
+<br>
+
+- Free Credit | 433.92 MHz
+- Pause Song | 433.92 MHz
+- Skip Song | 433.92 MHz
+- Volume UP | 433.92 MHz
+- Volume DOWN | 433.92 MHz
+- Power OFF | 433.92 MHz
+- Lock Queue | 433.92 MHz
+
+</details>
+
+<br>
+
+
+-----
+
+## Jammer
+
+**Jammer** is an experimental Sub-GHz interference-testing feature intended for controlled and authorized RF testing environments.
+
+The interface provides different transmission modes, including **Carrier** and **Frame**, allowing the RF output behavior to be selected directly from the settings.
+
+> [!CAUTION]
+> Radio-frequency interference may disrupt nearby wireless devices and communications. Use this feature only in controlled environments where you are authorized to perform RF testing, and always comply with applicable local regulations.
+
+### Jammer interface
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/Jammer_Config.png" width="49%">
+  <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/Jammer_Settings.png" width="49%">
+  <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/Jammer.png" width="700">
+</p>
+
+<br>
 
 -----
 
