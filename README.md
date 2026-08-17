@@ -5,7 +5,7 @@
 </p>
 
 <h2 align="center">
-  <a href="#introduction">Introduction</a> | <a href="#features">Features</a> | <a href="#supported-hardware">Supported Hardware</a> | <a href="#fromwilly">V2 → V3</a> | <a href="#contact">Contact</a> | <a href="#disclaimer">Disclaimer</a>
+  <a href="#introduction">Introduction</a> | <a href="#features">Features</a> | <a href="#fromwilly">V2 → V3</a> | <a href="#contact">Contact</a> | <a href="#disclaimer">Disclaimer</a>
 </h2>
 
 **Willy Firmware V3** is a feature-rich firmware developed specifically for the **LILYGO T-Embed CC1101** and **T-Embed CC1101 Plus**.
@@ -381,6 +381,15 @@ The detected frequency can then be applied directly to the general Sub-GHz setti
 🚧 Documentation and firmware in progress.
 
 -----
+
+# Development Status
+
+**Willy Firmware V3 is currently under active development.**
+
+Most core functionality is already implemented and functional, but applications, protocols and documentation may continue to evolve as development progresses.
+
+More screenshots and detailed feature documentation will be added as additional sections of the firmware are finalized.
+
 <br>
 
 <h1 align="center">From Willy Firmware V2 to V3</h1><a id="fromwilly"></a>
@@ -408,16 +417,6 @@ Compared with V2, V3 introduces or improves:
 The previous generation of Willy Firmware remains available here:
 
 **[Willy Firmware V2 – ESP32 Flipper Zero Alternative](https://github.com/h-RAT/Willy_Firmware_V2_ESP32_Flipper_Zero_Alternative)**
-
-# Development Status
-
-**Willy Firmware V3 is currently under active development.**
-
-Most core functionality is already implemented and functional, but applications, protocols and documentation may continue to evolve as development progresses.
-
-More screenshots and detailed feature documentation will be added as additional sections of the firmware are finalized.
-
-<br>
 
 -----
 
