@@ -70,6 +70,7 @@ Willy Firmware V3 is designed specifically for the LILYGO T-Embed CC1101 and T-E
   <a href="#bluetooth">🟦 Bluetooth / BLE</a> |
   <a href="#wifi">📶 Wi-Fi</a> |
   <a href="#nfc">📱 NFC</a> |
+  <a href="#bad_usb">⌨️ Bad USB</a> |
   <a href="#nrf24">📡 nRF24</a> |
   <a href="#settings">⚙️ Settings</a>
 </h3>
@@ -1016,6 +1017,25 @@ The result interface also includes an experimental **Deauthentication test** opt
 ### 📱 NFC<a id="nfc"></a>
 
 🚧 Documentation and firmware in progress.
+
+-----
+
+### ⌨️ Bad USB<a id="bad_usb"></a>
+
+**Bad USB** allows Willy Firmware to emulate a USB keyboard and execute scripted keyboard commands on a connected device.
+
+Payloads are stored as `.txt` files on the SD card and can be selected directly from the device before execution. The selected script is then interpreted and its keyboard commands are sent to the connected computer through USB.
+
+The keyboard **layout** can also be configured directly from the interface allowing the same payload to be adapted to different keyboard configurations.
+
+Willy Firmware uses a **DuckyScript-compatible** payload format, making it possible to reuse compatible Bad USB scripts and payloads from other supported devices.
+
+> [!CAUTION]
+> Bad USB scripts can perform actions on the connected device as if they were entered through a physical keyboard. Only execute payloads on device you own or have explicit authorization to test.
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/Bad_USB.png" width="700">
+</p>
 
 -----
 
