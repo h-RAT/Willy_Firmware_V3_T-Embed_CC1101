@@ -71,7 +71,7 @@ Willy Firmware V3 is designed specifically for the LILYGO T-Embed CC1101 and T-E
   <a href="#wifi">📶 Wi-Fi</a> |
   <a href="#nfc">📱 NFC</a> |
   <a href="#bad_usb">⌨️ Bad USB</a> |
-  <a href="#nrf24">📡 nRF24</a> |
+  <a href="#nrf24">🛰️ nRF24</a> |
   <a href="#settings">⚙️ Settings</a>
 </h3>
 
@@ -1039,9 +1039,159 @@ Willy Firmware uses a **DuckyScript-compatible** payload format, making it possi
 
 -----
 
-### 📡 nRF24<a id="nrf24"></a>
+### 🛰️ nRF24<a id="nrf24"></a>
 
-🚧 Documentation and firmware in progress.
+<p align="center">
+  <a href="#nrf24_analyzer">Analyzer</a> •
+  <a href="#nrf24_wifi_jam">WiFi Jammer</a> •
+  <a href="#nrf24_ble_jam">BLE Jammer</a> •
+  <a href="#nrf24_drone_jam">Drone Jammer</a> •
+</p>
+
+The nRF24 is a 2.4 GHz transceiver used by the T-Embed CC1101 Plus to provide additional wireless functionality beyond the integrated WiFi/BLE.
+
+Willy Firmware uses the nRF24 for 2.4 GHz spectrum analysis and experimental wireless testing features, with dedicated applications for Wi-Fi, Bluetooth/BLE and other 2.4 GHz technologies.
+
+> [!NOTE]
+> nRF24 functionality requires the LILYGO T-Embed CC1101 Plus. The standard T-Embed CC1101 does not include the additional nRF24 radio.
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/NRF24.png" width="700">
+</p>
+
+-----
+
+## Analyzer<a id="nrf24_analyzer"></a><br>
+
+**Analyzer** is a 2.4 GHz activity analyzer based on the nRF24 radio.
+
+The analyzer monitors the nRF24 channel range and displays the detected RF activity directly on a real-time bar chart. Each bar represents one of the monitored nRF24 channels, allowing activity across the 2.4 GHz range to be visualized at a glance.
+
+The chart is continuously updated while the analyzer is running, providing a live representation of detected wireless activity.
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/NRF24_Analyzer.png" width="700">
+</p>
+
+
+<br>
+
+-----
+
+## WiFi Jammer<a id="nrf24_wifi_jam"></a><br>
+
+**WiFi Jammer** is an experimental 2.4 GHz RF interference-testing feature using the nRF24.
+
+The target can be configured to cover the Wi-Fi 2.4 GHz channel range or to focus on the channels associated with a previously scanned Wi-Fi network.
+
+The transmission behavior can be customized through several settings:
+
+### Target:
+- Wi-Fi 2.4 GHz channels
+- Previously scanned SSID channels
+
+### Mode:
+- **Const Carrier** - Continuous carrier transmission mode.
+- **Data Flooding** - Repeated data transmission mode.
+- **Turbo Flood** - High-speed data transmission mode.
+- **AFH Exhaust** - Designed to continuously cover channels used by adaptive-frequency systems.
+
+### Settings:
+- **Data Rate** - Selects the nRF24 transmission data rate.
+- **Packet Delay** - Configures the delay between transmissions.
+- **Packets** - Selects the number of packets handled per transmission cycle, from 1 to 20.
+
+This provides several configurable RF transmission patterns for controlled 2.4 GHz wireless testing.
+
+> [!CAUTION]
+> 2.4 GHz interference may disrupt nearby wireless devices and communications. Use this feature only in controlled environments where you are authorized to perform RF testing, and always comply with applicable local regulations.
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/NRF24_WiFi_Jam.png" width="49%">
+  <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/NRF24_WiFi_Jam_Config.png" width="49%">
+</p>
+
+
+<br>
+
+-----
+
+## BLE Jammer<a id="nrf24_ble_jam"></a><br>
+
+**BLE Jammer** is an experimental 2.4 GHz RF interference-testing feature focused on Bluetooth and Bluetooth Low Energy environments.
+
+The transmission target can be selected according to the type of Bluetooth traffic being tested:
+
+### Target:
+- **BLE Data** - Targets channels used for BLE data communication.
+- **BLE Advertising** - Targets the advertising channels used by Bluetooth Low Energy.
+- **Classic** - Targets the channel range used by Bluetooth Classic.
+
+The transmission behavior can be customized through several settings:
+
+### Mode:
+- **Const Carrier** - Continuous carrier transmission mode.
+- **Data Flooding** - Repeated data transmission mode.
+- **Turbo Flood** - High-speed data transmission mode.
+- **AFH Exhaust** - Designed to continuously cover channels used by adaptive-frequency systems.
+
+### Settings:
+- **Data Rate** - Selects the nRF24 transmission data rate.
+- **Packet Delay** - Configures the delay between transmissions.
+- **Packets** - Selects the number of packets handled per transmission cycle, from 1 to 20.
+
+This provides several configurable RF transmission patterns for controlled 2.4 GHz wireless testing.
+
+> [!CAUTION]
+> 2.4 GHz interference may disrupt nearby Bluetooth and BLE devices and communications. Use this feature only in controlled environments where you are authorized to perform RF testing, and always comply with applicable local regulations.
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/NRF24_BLE_Jam.png" width="49%">
+  <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/NRF24_BLE_Jam_Config.png" width="49%">
+</p>
+
+
+<br>
+
+-----
+
+## Drone Jammer<a id="nrf24_drone_jam"></a><br>
+
+**Drone Jammer** is an experimental 2.4 GHz RF interference-testing feature designed to explore different types of wireless systems commonly operating in the 2.4 GHz band.
+
+The target can be selected according to the type of wireless system being tested:
+
+### Target:
+- **Drone FHSS** - Targets frequency-hopping systems used by compatible drone communication links.
+- **RC Controller** - Targets the 2.4 GHz channel range commonly used by remote-control systems.
+- **Video / FPV** - Targets 2.4 GHz wireless video and FPV communication systems.
+- **Zigbee** - Targets channels used by Zigbee networks in the 2.4 GHz band.
+
+The transmission behavior can be customized through several settings:
+
+### Mode:
+- **Const Carrier** - Continuous carrier transmission mode.
+- **Data Flooding** - Repeated data transmission mode.
+- **Turbo Flood** - High-speed data transmission mode.
+- **AFH Exhaust** - Designed to continuously cover channels used by adaptive-frequency systems.
+
+### Settings:
+- **Data Rate** - Selects the nRF24 transmission data rate.
+- **Packet Delay** - Configures the delay between transmissions.
+- **Packets** - Selects the number of packets handled per transmission cycle, from 1 to 20.
+
+This provides several configurable RF transmission patterns for controlled 2.4 GHz wireless testing.
+
+> [!CAUTION]
+> 2.4 GHz interference may disrupt nearby drones, remote-control systems, video links, Zigbee networks and other wireless devices. Use this feature only in controlled environments where you are authorized to perform RF testing, and always comply with applicable local regulations.
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/NRF24_Drone_Jam.png" width="49%">
+  <img src="https://raw.githubusercontent.com/h-RAT/Willy_Firmware_V3_T-Embed_CC1101/refs/heads/main/Image/NRF24_Drone_Jam_Config.png" width="49%">
+</p>
+
+
+<br>
 
 -----
 
