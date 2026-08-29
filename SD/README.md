@@ -1,1 +1,0 @@
-Place these folders at the root of your SD card.
